@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My Profile</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+</head>
+<body>
+<div ng-app="myapp" ng-controller="mycontroller">
+    <h1>My Profile Data</h1>
+    FirstName : <input type="text" name="firstName" ng-model="firstName"><br>
+    LastName : <input type="text" name="lastName" ng-model="lastName"><br>
+    FullName : {{fullName()}}
+    <script src="js/profileController.js"></script>
+</div>
+</body>
+</html>

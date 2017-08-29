@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script type="text/javascript" src="js/httpPost.js"></script>
+    <title>$http POST Service example</title>
+</head>
+<body>
+<div ng-app="postServiceApp" ng-controller="postServiceCtrl">
+    <div>
+        Name: <input ng-model="name"/><br/><br/>
+        Age: <input ng-model="age"/><br/><br/>
+        Address: <input ng-model="address"/><br/>
+        <input type="button" value="send" ng-click="postdata(name,age,address)"/><br/><br/>
+    </div>
+    <p>Output Message:{{msg}}</p>
+    <p>StatusCode:{{statusVal}}</p>
+    <p>Status:{{stausText}}</p>
+    <p>Headers:{{headers}}</p>
+    <p>Config:{{config}}</p>
+</div>
+</body>
+</html>

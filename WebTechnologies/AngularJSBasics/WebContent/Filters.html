@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Angualr js Filter</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+</head>
+<body>
+<div ng-app="myApp">
+    <div ng-controller="personCtrl">
+        <p>My FirstName is {{ firstName | uppercase }}</p>
+        <p>and My LastName is {{lastName | lowercase }}</p>
+        <p>My FullName is {{fullName()}}</p>
+    </div>
+    <div ng-controller="namesCtrl">
+        <p>Looping with objects</p>
+        <ul>
+            <li ng-repeat="x in names | orderBy:'country'">
+                {{x.name+','+x.country}}
+            </li>
+        </ul>
+    </div>
+    <div ng-controller="myfilter">
+        <p>this controller displays only the names containing the letter "o"</p>
+        <ul>
+            <li ng-repeat="x in names | filter :'o'">
+                {{x}}
+            </li>
+        </ul>
+    </div>
+    <div ng-controller="myinput">
+        <input type="text" ng-model="test">
+        <li ng-repeat="x in names | filter:test">
+            {{x}}
+        </li>
+    </div>
+    <div ng-controller="myheader">
+        <h1>My Name and My Country Details</h1>
+        <table border="2" width="10%">
+            <tr>
+                <th ng-click="orderByMe('name')">Names</th>
+                <th ng-click="orderByMe('country')">Country</th>
+            </tr>
+            <tr ng-repeat="x in names | orderBy:'name'">
+                <td>{{x.name}}</td>
+                <td>{{x.country}}</td>
+            </tr>
+        </table>
+    </div>
+    <div ng-controller="costCtrl">
+        <h2>Currency filter formats number to a currency format</h2>
+        <h4>{{price | currency}}</h4>
+    </div>
+    <div ng-controller="namesCtrl">
+        <h3>Length of the Array Strings is </h3>
+        <ul>
+           <li ng-repeat="x in names">
+               {{x | myfilter}}
+           </li>
+        </ul>
+    </div>
+</div>
+<script src="js/filter.js"></script>
+</body>
+</html>

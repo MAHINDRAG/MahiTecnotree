@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src ="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <title>ng-required Directive</title>
+</head>
+<body ng-app="myapp">
+    Name :<input type="text" name="name" ng-model="myname" required>
+    <h1 ng-if="!name.$valid">The input field cannot be empty</h1>
+    My Name is : {{myname}}
+</body>
+</html>
